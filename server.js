@@ -3,6 +3,7 @@ const express = require("express");
 //use mongoose (great for catching code snakes)
 const mongoose = require("mongoose");
 const routes = require('./controllers/controller.js')
+var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/workout'
 
 //pick a port
 const PORT = 3000;
@@ -17,7 +18,7 @@ app.use(routes)
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 });

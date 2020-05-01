@@ -6,7 +6,7 @@ const routes = require('./controllers/controller.js')
 var MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/workout'
 
 //pick a port
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //creat an express function variable
 const app = express();
